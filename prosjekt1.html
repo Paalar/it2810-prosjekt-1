@@ -1,0 +1,385 @@
+<!DOCTYPE>
+<html>
+
+    <head>
+        <meta charset="utf-8" />
+        <title>A Forgotten Time</title>
+        <link href="prosjekt1.css" rel="stylesheet"  />
+        <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css' />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script type="text/javascript" src="javascript.js"></script>
+    </head>
+
+    <body>
+        <div class="site">
+
+            <h1 class="art-title" >A Forgotten Time</h1>
+
+            <div class="svg-container">
+                <svg class="tv" id="planet" width="700" height="800">
+                    <!-- Power Cable -->
+                    <polyline points="0,700 100,690 120,670 130,650 140,580"
+                        stroke="gray" fill="none" stroke-width="10"/>
+                    <rect y="685" x="-10" width="30" height="30" rx="10" fill="gray"/>
+
+                    <!-- TV Legs -->
+                    <line x1="220" y1="580" x2="175" y2="750" stroke="black" stroke-width="10"/>
+                    <line x1="180" y1="580" x2="165" y2="700" stroke="black" stroke-width="8" />
+                    <line x1="500" y1="580" x2="555" y2="750" stroke="black" stroke-width="10"/>
+                    <line x1="540" y1="580" x2="565" y2="700" stroke="black" stroke-width="8" />
+
+                    <!-- TV Antennas -->
+                    <line x1="70" y1="10" x2="250" y2="180" stroke="black" stroke-width="3"/>
+                    <line x1="530" y1="10" x2="350" y2="180" stroke="black" stroke-width="3" />
+                    <ellipse cx="300" cy="200" rx="150" ry="30" fill="gray"/>
+
+                    <!-- TV Box -->
+                    <rect y="200" width="700" height="400" rx="20" ry="20" fill="brown" />
+
+                    <!-- TV Screen -->
+                    <rect id="screen" y="210" x="10" width="560" ry="20" rx="20" height="380" stroke="black" stroke-width="2"/>
+
+                    <!-- Channel Buttons -->
+                    <rect id="spaceButton" class="button" y="300" x="600" rx="2" ry="2" width="30" height="30" />
+                    <rect id="mountainsButton" class="button" y="340" x="640" rx="2" ry="2" width="30" height="30" />
+                    <rect id="beachButton" class="button" y="300" x="640" rx="2" ry="2" width="30" height="30" />
+                    <rect id="footballButton" class="button" y="340" x="600" rx="2" ry="2" width="30" height="30" />
+
+                    <!-- On/Off Switch -->
+                    <circle class="power" cx="660" cy="560" r="30" fill="gray" stroke="black"/>
+                    <line class="power" id="powerLineOff" x1="660" y1="530" x2="660" y2="590" stroke="black" stroke-width="10"/>
+                    <line class="power" id="powerLineOn" x1="630" y1="560" x2="690" y2="560" stroke="black" stroke-width="10"/>
+
+                    <!-- Screen 1 / Shore-->
+                    <rect class="beach" id="sand" x="13" y="470" width="554" height="118" rx="20" ry="20" fill="beige"/>
+                    <rect class="beach" id="sea" x="13" y="212" width="554" height="280" ry="20" fill="blue"/>
+                    <circle class="beach" id="beach-sun" cx="500" cy="260" r="40" fill="yellow"/>
+
+                    <!-- Sea change color -->
+                    <animate
+                        xlink:href="#sea"
+                        attributeName="fill"
+                        values="blue;black;blue"
+                        dur="10s"
+                        repeatCount="indefinite" />
+
+                    <!-- Sand change color -->
+                    <animate
+                        xlink:href="#sand"
+                        attributeName="fill"
+                        values="beige;black;beige"
+                        dur="10s"
+                        repeatCount="indefinite" />
+
+                    <!-- Sun change color -->
+                    <animate
+                        xlink:href="#beach-sun"
+                        attributeName="fill"
+                        values="yellow;gold;beige;gold;yellow"
+                        dur="10s"
+                        repeatCount="indefinite" />
+
+                    <!-- Sun change X position -->
+                    <animate
+                        xlink:href="#beach-sun"
+                        attributeName="cx"
+                        values="500;80;500"
+                        dur="10s"
+                        repeatCount="indefinite"/>
+
+                    <!-- Sun change Y position -->
+                    <animate
+                        xlink:href="#beach-sun"
+                        attributeName="cy"
+                        values="260;420;260"
+                        dur="10s"
+                        repeatCount="indefinite" />
+
+                    <!-- Screen 2 / Football Field-->
+                    <rect class="football" x="13" y="212" width="554" height="375" rx="20" fill="green" />
+                    <rect class="football" id="left-goal" x="15" y="340" width="60" height="120" fill="white" />
+                    <rect class="football" id="right-goal" x="505" y="340" width="60" height="120" fill="white" />
+                    <circle class="football" cx="300" cy="400" r="50" stroke="white" fill="none" />
+                    <circle class="football" cx="300" cy="400" r="5" fill="white" />
+
+                    <animate
+                        xlink:href="#left-goal"
+                        attributeName="y"
+                        values="340;220;460;340"
+                        dur="2s"
+                        begin="click"
+                    />
+
+                    <animate
+                        xlink:href="#right-goal"
+                        attributeName="x"
+                        values="505;200;505"
+                        dur="3s"
+                        begin="click"
+                    />
+
+
+                    <!-- Screen 3 / Space -->
+                    <rect class="space" x="13" y="212" width="554" height="375" rx="20" fill="black" />
+                    <circle class="space" id="moon" cx="450" cy="300" r="80" fill="beige" />
+                    <circle class="space" id="crater2" cx="400" cy="320" r="20" fill="lightgray" />
+                    <circle class="space" id="crater3" cx="420" cy="250" r="10" fill="lightgray" />
+                    <!-- Stars -->
+                    <circle class="space" cx="500" cy="300" r="20" fill="lightgray" />
+                    <circle class="space" cx="300" cy="300" r="2" fill="white" />
+                    <circle class="space" cx="200" cy="300" r="2" fill="white" />
+                    <circle class="space" cx="400" cy="400" r="2" fill="white" />
+                    <circle class="space" cx="320" cy="430" r="2" fill="white" />
+                    <circle class="space" cx="340" cy="540" r="2" fill="white" />
+                    <circle class="space" cx="180" cy="420" r="2" fill="white" />
+                    <circle class="space" cx="120" cy="380" r="2" fill="white" />
+                    <circle class="space" cx="175" cy="276" r="2" fill="white" />
+
+                    <!-- Moon change Y position -->
+                    <animate
+                        xlink:href="#moon"
+                        attributeName="cy"
+                        values="300;290;400;300"
+                        dur="3s"
+                        begin="click"
+                        />
+
+                    <!-- Moon change X position -->
+                    <animate
+                        xlink:href="#moon"
+                        attributeName="cx"
+                        values="450;370;500;450"
+                        dur="3s"
+                        begin="click"
+                        />
+
+                    <!-- Screen 4 / Mountains -->
+                    <rect class="mountains" x="13" y="212" width="554" height="375" rx="20" fill="green"/>
+                    <circle class="mountains" id="mountains-sun" cx="500" cy="275" r="50" fill="yellow" />
+                    <ellipse class="mountains" cx="300" cy="420" rx="250" ry="30" fill="blue" stroke="black" />
+                    <polygon class="mountains" points="125,400 275,400 200,325" stroke="black" fill="gray"/>
+                    <polygon class="mountains" points="300,400 450,400 370,325" stroke="black" fill="gray"/>
+                    <polygon class="mountains" points="25,400 200,400 100,250" stroke="black" fill="gray"/>
+                    <polygon class="mountains" points="200,400 375,400 275,250" stroke="black" fill="gray"/>
+                    <polygon class="mountains" points="375,400 550,400 450,250" stroke="black" fill="gray"/>
+                    <rect class="mountains" id="bear-body" x="50" y="500" width="50" height="25" fill="brown" stroke="black" />
+                    <rect class="mountains" id="bear-back-leg" x="90" y="525" width="10" height="30" fill="brown" stroke="black" />
+                    <rect class="mountains" id="bear-front-leg" x="50" y="525" width="10" height="30" fill="brown" stroke="black" />
+                    <circle class="mountains" id="bear-head" cx="100" cy="500" r="10" fill="brown" stroke="black" />
+
+                    <!-- Moves the sun -->
+                    <animate
+                        xlink:href="#mountains-sun"
+                        attributeName="cx"
+                        values="500;100;500"
+                        dur="10s"
+                        repeatCount="indefinite" />
+
+                    <animate
+                        xlink:href="#mountains-sun"
+                        attributeName="cy"
+                        values="275;325;275"
+                        dur="10s"
+                        repeatCount="indefinite" />
+
+                    <!-- Moves the bear parts -->
+                    <animate
+                        xlink:href="#bear-body"
+                        attributeName="x"
+                        values="50;500;50"
+                        dur="5s"
+                        repeatCount="indefinite" />
+
+                    <animate
+                        xlink:href="#bear-front-leg"
+                        attributeName="x"
+                        values="50;500;50"
+                        dur="5s"
+                        repeatCount="indefinite" />
+
+                    <animate
+                        xlink:href="#bear-back-leg"
+                        attributeName="x"
+                        values="90;540;90"
+                        dur="5s"
+                        repeatCount="indefinite" />
+
+                    <animate
+                        xlink:href="#bear-head"
+                        attributeName="cx"
+                        values="100;550;100"
+                        dur="5s"
+                        repeatCount="indefinite" />
+                </svg>
+            </div>
+
+        <div class="artist-info">
+            <h1>Saran Lapel</h1>
+            <p>
+                Saran Lapel is the designer of the artwork 'A Forgotten Time'.
+                Saran is an artist that wants to show the beauty of the simple
+                things in life as well as how complex, but easily understood
+                the constructions of older times could be. Saran always
+                favourites the old fashioned manual labor, which is ironic
+                since he creates his art through websites and tehcnology.
+            </p>
+
+            <p class="art-info">
+                'A Forgotten Time' is a simple recreation of older televisions
+                and trying as well as entertain the curious of mind who will
+                play with this creation.
+            </p>
+
+            <p class="art-info">
+                The TV displays 4 different artworks; The beach, Space,
+                Mountain Range, and the Football Field. They all have
+                their unique functionality that gives them their own feel
+            </p>
+
+            <p class="art-info" >
+                Protip: Turn on the TV before changing the channels
+            </p>
+
+            <p class="art-info">
+                Protip 2: Some elements are clickable on the different channels
+            </p>
+        </div>
+
+
+        </div>
+
+        <div class="documentation" id="docPage">
+            <div class="doc-wrapper">
+                <span id="close-doc">&times;</span>
+                <div class="doc-content" id="flexbox-doc" >
+                    <h4>Flexbox & CSS-Grid</h4>
+                    <p>
+                        Flexbox layout and CSS-grid are meant to solve the issues of
+                        aligning items on a webpage. The problems arises often when
+                        items are supposed to be dynamic and change to different
+                        screen sizes for all kind of screens be it phone or computer
+                        screens.
+                    </p>
+
+                    <p>
+                        With Flexbox a lot of the items are generated automatically,
+                        but can be set to how much of the screen the item should use.
+                        With CSS grid and how many columns are manually
+                        set, while each item is either given or not how many columns
+                        it should span or in which column it should be placed.
+                        With Flexbox it was a lot easier to make the site pleasing
+                        and dynamic which is why Saran chose to use it over CSS-Grid.
+                    </p>
+                </div>
+
+                <div class="doc-content" id="svg-doc">
+                    <h4>SVG & Canvas</h4>
+                    <p>
+                        SVG & Canvas are both used to draw graphical elements on a
+                        webpage in html. SVGs are drawn in the html's svg tag while
+                        Canvas uses the canvas tag, but is draw in a script. Canvas
+                        is more suited for games, but the main reason Saran chose SVGs
+                        is the support for event handlers as well as they are
+                        resolution independent and they take less space than
+                        canvas. It can be argued that Canvas would be well suited
+                        since the art uses animations, but Saran favoured the other
+                        advantages.
+                    </p>
+                </div>
+
+                <div class="doc-content" id="jquery-doc">
+                    <h4>JQuery</h4>
+                    <p>
+                        JQuery is a lightweight JavaScript library which requires
+                        less writing than pure JavaScript. JQuery takes a lot of
+                        functionality in JavaScript that requires a lot of lines to
+                        write which can easily be done in a single or few methods
+                        in JQuery. JQuery simplifies DOM manipulation and create
+                        event handlers like on clikc functions as well as easily
+                        edit css.
+                    </p>
+
+                    <p>
+                        In this project the use of JQuery makes it easy to select
+                        and save either classes or IDs into a single variable. Several
+                        SVG elements are created to look like buttons, and it is easy
+                        to create an on Click function, with only the <span class="code">
+                        .click();</span> method, shown with an example: <span class="code">
+                        variable.click( function (){ //code });</span>. The possibility
+                        to edit css is easily made by calling the method <span class="code">
+                        .css()</span> on a variable, shown with an example:
+                        <span class="code">variable.css('attribute', 'value');</span>
+                        The final and also useful function used with JQuery is
+                        the <span class="code">.is();</span> method called on a variable.
+                        It was used to check if an element was visible, shown with
+                        an example <span class="code">variable.is(':visible');</span>
+                    </p>
+                </div>
+
+                <div class="doc-content browser-testing">
+                    <h4>Cross browser testing</h4>
+                    <p>
+                        Cross browser testing is incredibly important in
+                        creating websites since there exists so many different
+                        devices and browsers used by so many people in different
+                        parts of the world. Not only is it important to test
+                        different browsers, but also different browser versions
+                        where a lot can change in a few years time. Screens
+                        may also vary in sizes, it isn't only computers using
+                        websites, but also phones and other smaller devices.
+                        So testing if the website is functional and looks good
+                        on different screens is also an important part of web
+                        devlopment.
+                    </p>
+
+                    <p>
+                        Testing som har blitt gjort er på Mac og PC i både de
+                        nyeste versjonene av Firefox og Google Chrome. Det ble
+                        testet i ulike skjerm størrelser for å se at Flexbox
+                        reagerte på ønskede måter. Det ble sjekket at alle
+                        animasjoner fungerte.
+                    </p>
+
+                </div>
+
+                <div class="tutorial-doc doc-content">
+                    <h4>Links and websites</h4>
+                    <p>
+                        Tutorials used are mostly css-tricks as well as w3schools.
+                        There may have been a site or two that has been missed, but
+                        mostly these tutorials have been used to create this websites.
+                    </p>
+                    <ul>
+                        <li>https://www.w3schools.com/</li>
+                        <li>https://www.w3schools.com/html/default.asp</li>
+                        <li>https://www.w3schools.com/css/default.asp</li>
+                        <li>https://www.w3schools.com/jquery/default.asp</li>
+                        <li>https://www.w3schools.com/howto/howto_css_modals.asp</li>
+
+                        <li>https://css-tricks.com/</li>
+                        <li>https://css-tricks.com/snippets/css/complete-guide-grid//</li>
+                        <li>https://css-tricks.com/snippets/css/a-guide-to-flexbox/</li>
+                    </ul>
+                </div>
+
+                <div class="doc-content snippet-doc">
+                    <h4>Code Snippets</h4>
+                    <p>
+                        The button code snippet is taken from
+                        https://www.w3schools.com/howto/howto_css_outline_buttons.asp.
+                        The modal is inspired from
+                        https://www.w3schools.com/howto/howto_css_modals.asp.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>
+                This site is not owned by Saran Lapel, but driven by one of his biggest fans. <br/>
+                <button id="button-doc">This button opens up documentation</button>
+            </p>
+        </div>
+    </body>
+
+</html>
