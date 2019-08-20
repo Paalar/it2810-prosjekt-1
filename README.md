@@ -9,4 +9,4 @@ The TV is interactable where one can turn on the TV, change channels, and intera
 ![Cow page](./readme_files/turn_on_to_cow.gif)
 ![Moon page](./readme_files/moon.gif)
 ![Soccer page](./readme_files/ping_pong_soccer_field.gif)
-![Beach sunrise](/radme_files/beach_sunrise_down.gif)
+![Beach sunrise](/radme_files/beach_sunrise_down_.gif)
